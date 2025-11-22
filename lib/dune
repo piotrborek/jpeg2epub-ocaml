@@ -1,0 +1,4 @@
+(library
+    (name jpeg2epub)
+    (preprocess (pps ppx_deriving.show ppx_deriving.eq))
+    (libraries eio_main ANSITerminal climate))

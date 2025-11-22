@@ -1,0 +1,4 @@
+(executable
+    (public_name jpeg2epub)
+    (name main)
+    (libraries jpeg2epub))

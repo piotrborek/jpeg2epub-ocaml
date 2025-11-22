@@ -1,0 +1,17 @@
+(version 0.8.5)
+
+(build
+ (progn
+  (when
+   %{pkg-self:dev}
+   (run dune subst))
+  (run dune build -p %{pkg-self:name} -j %{jobs})))
+
+(depends ocaml dune base-bytes base-unix)
+
+(source
+ (fetch
+  (url
+   https://github.com/Chris00/ANSITerminal/releases/download/0.8.5/ANSITerminal-0.8.5.tbz)
+  (checksum
+   sha256=ab73b218b6a30267d2bbc43312dcf313981b8b0bec555d92b06b87664b2dd30e)))

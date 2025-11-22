@@ -1,0 +1,3 @@
+(tests
+    (names cli_args_area_test)
+    (libraries alcotest jpeg2epub))
