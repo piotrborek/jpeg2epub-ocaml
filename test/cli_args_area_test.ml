@@ -6,7 +6,7 @@ let test_create_from_string ~text ~expected () =
     Alcotest.(check @@ option area) "" expected (Area.create_from_string text)
 
 let suite =
-    [ "when_empty_string_should_return_none", `Quick, (test_create_from_string ~text:"" ~expected:None)
+    [ "when_empty_string_should_return_none", `Quick, test_create_from_string ~text:"" ~expected:None
     ; "when_wrong_string_1_should_return_none", `Quick, test_create_from_string ~text:"a" ~expected:None
     ; "when_wrong_string_2_should_return_none", `Quick, test_create_from_string ~text:"a b" ~expected:None
     ; "when_wrong_string_3_should_return_none", `Quick, test_create_from_string ~text:"a b c" ~expected:None
