@@ -20,8 +20,8 @@ module Area = struct
         let parse_area = function
             | s1::s2::s3::s4::[] ->
                 begin
-                    match (int_of_string_opt s1, int_of_string_opt s2, int_of_string_opt s3, int_of_string_opt s4) with
-                    | (Some i1, Some i2, Some i3, Some i4) -> Some {x = i1; y = i2; width = i3; height = i4}
+                    match int_of_string_opt s1, int_of_string_opt s2, int_of_string_opt s3, int_of_string_opt s4 with
+                    | Some i1, Some i2, Some i3, Some i4 -> Some {x = i1; y = i2; width = i3; height = i4}
                     | _ -> None
                 end
             | _ -> None
