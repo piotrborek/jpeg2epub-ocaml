@@ -1,19 +1,10 @@
 let main () =
-    let _cli_args = Cli.cli_run () in
-    let area1 = {
-        Cli_args.Area.x = 1;
-        y = 2;
-        width = 3;
-        height = 4;
-    } in
-    let area2 = {
-        Cli_args.Area.x = 1;
-        y = 2;
-        width = 3;
-        height = 4;
-    } in
-    let _cmp = (area1 == area2) in
-    let _xx = (Format.printf "test: %a@\n" Cli_args.Area.pp) in
-    Format.printf "test: %a@\n" Cli_args.Area.pp area1;
+    let cli_args = Cli.cli_run () in
+    begin
+        match cli_args.cut_area with
+        |   None -> Format.printf "None"
+        |   Some x -> Format.printf "%a@\n" Cli_args.Area.pp x
+    end;
     Eio_main.run @@ fun env ->
+        let _x = env#fs in
         Logo.print_logo ~stdout:env#stdout
