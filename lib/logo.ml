@@ -6,7 +6,7 @@ let logo_string = {raw|   _                          ____                       
 |__/  |_|             |___/                 |_|
 |raw}
 
-let print_logo ~stdout = 
+let print_logo stdout = 
     let open ANSITerminal in
     let text = sprintf [yellow] "%s" logo_string in
     Eio.Flow.copy_string text stdout

@@ -1,1 +1,2 @@
-let () = Jpeg2epub.Main.main ()
+let () =
+    Jpeg2epub.Main.main ()

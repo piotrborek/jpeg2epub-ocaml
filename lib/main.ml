@@ -1,10 +1,8 @@
 let main () =
-    let cli_args = Cli.cli_run () in
-    begin
-        match cli_args.cut_area with
-        |   None -> Format.printf "None"
-        |   Some x -> Format.printf "%a@\n" Cli_args.Area.pp x
-    end;
+    let _cli_args = Cli.cli_run () in
     Eio_main.run @@ fun env ->
-        let _x = env#fs in
-        Logo.print_logo ~stdout:env#stdout
+        Logo.print_logo env#stdout;
+        let _zip_path = Programs.find_zip_in_path env#fs in
+        let _unzip_path = Programs.find_unzip_in_path env#fs in
+        let _convert_path = Programs.find_convert_in_path env#fs in
+        ()
